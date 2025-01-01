@@ -1,0 +1,30 @@
+{
+  "name": "is-it-fifteen",
+  "version": "1.0.0",
+  "description": "\"A simple package to check if a number is 15",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "test": "echo \"No tests specified\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kimmyxpow/is-it-fifteen.git"
+  },
+  "keywords": [
+    "check",
+    "number",
+    "fifteen",
+    "typescript"
+  ],
+  "author": "kimmyxpow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kimmyxpow/is-it-fifteen/issues"
+  },
+  "homepage": "https://github.com/kimmyxpow/is-it-fifteen#readme",
+  "devDependencies": {
+    "typescript": "^5.7.2"
+  }
+}
