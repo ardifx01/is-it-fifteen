@@ -1,145 +1,115 @@
 import { DotPattern } from './components/dot-pattern'
 import { CTAButton } from './components/cta-button'
-import { ScrollProgress } from './components/scroll-progress'
 import { Card } from './components/card'
 import { Icon } from '@iconify/react'
+import { Footer } from './components/footer'
+
+const features = [
+    {
+        title: '🪶 Lightweight and Fast',
+        description:
+            'At under 1KB, @is-it/fifteen won’t bloat your project. Built for performance and simplicity.',
+    },
+    {
+        title: '💪🏻 Flexible Options',
+        description:
+            'Strict or loose comparisons? Binary or negative numbers? Customize it your way with our powerful configuration options.',
+    },
+    {
+        title: '🔑 TypeScript Ready',
+        description: 'Full TypeScript support ensures type safety and better developer experience.',
+    },
+    {
+        title: '📚 No Dependencies',
+        description: 'Stay lean. No unnecessary dependencies—just pure functionality.',
+    },
+    {
+        title: '⚙️ Built for Developers',
+        description:
+            'Designed to save you time. Integrate seamlessly with JavaScript or TypeScript projects in seconds.',
+    },
+    {
+        title: '🤟🏻 Modern and Open Source',
+        description:
+            'Actively maintained and built for today’s development needs. Open to contributions from the community.',
+    },
+]
 
 function App() {
     return (
         <>
-            <ScrollProgress />
-            <div className="min-h-dvh overflow-hidden bg-zinc-950">
-                <main className="relative flex min-h-dvh flex-col items-center justify-center text-center">
-                    <div className="relative z-10 container">
-                        <div className="mx-auto max-w-6xl space-y-6">
-                            <h1 className="text-8xl leading-[1.25]">
-                                Simplify Your Number Validation with
-                                <span className="bg-gradient-to-br from-pink-200 via-amber-200 to-cyan-200 bg-clip-text text-transparent">
-                                    {' '}
-                                    @is-it/fifteen
-                                </span>
-                            </h1>
-                            <p className="mx-auto max-w-3xl text-xl text-zinc-400">
-                                A lightweight, flexible, and developer-friendly utility for precise
-                                number checks. Optimized for modern JavaScript and TypeScript
-                                environments.
-                            </p>
-                            <div className="flex items-center justify-center gap-6">
-                                <CTAButton />
-                                <a
-                                    href="http://github.com/kimmyxpow/is-it-fifteen"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-3xl text-white transition-all duration-300 hover:text-zinc-400"
-                                >
-                                    <Icon icon="tabler:brand-github" />
-                                </a>
-                            </div>
+            <main className="relative flex min-h-dvh flex-col items-center justify-center text-center">
+                <div className="relative z-10 container">
+                    <div className="mx-auto max-w-6xl space-y-6">
+                        <h1 className="text-4xl leading-[1.25] sm:text-6xl lg:text-7xl xl:text-8xl">
+                            Simplify Your Number Validation with
+                            <span className="bg-gradient-to-br from-pink-200 via-amber-200 to-cyan-200 bg-clip-text text-transparent">
+                                {' '}
+                                @is-it/fifteen
+                            </span>
+                        </h1>
+                        <p className="mx-auto max-w-3xl text-lg text-zinc-400 sm:text-xl">
+                            A lightweight, flexible, and developer-friendly utility for precise
+                            number checks. Optimized for modern JavaScript and TypeScript
+                            environments.
+                        </p>
+                        <div className="flex items-center justify-center gap-6">
+                            <CTAButton />
+                            <a
+                                href="http://github.com/kimmyxpow/is-it-fifteen"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-3xl text-white transition-all duration-300 hover:text-zinc-400"
+                            >
+                                <Icon icon="tabler:brand-github" />
+                            </a>
                         </div>
                     </div>
-                    <DotPattern />
-                </main>
-                <section className="py-20">
-                    <div className="container">
-                        <h2 className="mb-14 text-6xl" id="get-started">
-                            Get Started
-                        </h2>
-                        <div className="grid grid-cols-2 gap-10">
-                            <div className="grid grid-cols-2 gap-4">
-                                <Card>
-                                    <h3 className="relative z-20 mb-4 text-xl">
-                                        🪶 Lightweight and Fast
-                                    </h3>
+                </div>
+                <DotPattern />
+            </main>
+            <section className="py-20">
+                <div className="container">
+                    <h2 className="mb-14 text-3xl sm:text-5xl lg:text-6xl" id="get-started">
+                        Get Started
+                    </h2>
+                    <div className="grid-cols-2 gap-x-10 space-y-10 xl:grid">
+                        <div className="grid gap-4 sm:grid-cols-2">
+                            {features.map((feature) => (
+                                <Card key={feature.title}>
+                                    <h3 className="relative z-20 mb-4 text-xl">{feature.title}</h3>
                                     <p className="relative z-20 text-neutral-400">
-                                        At under 1KB, @is-it/fifteen won’t bloat your project. Built
-                                        for performance and simplicity.
+                                        {feature.description}
                                     </p>
                                 </Card>
-                                <Card>
-                                    <h3 className="relative z-20 mb-4 text-xl">
-                                        💪🏻 Flexible Options
-                                    </h3>
-                                    <p className="relative z-20 text-neutral-400">
-                                        Strict or loose comparisons? Binary or negative numbers?
-                                        Customize it your way with our powerful configuration
-                                        options.
-                                    </p>
-                                </Card>
-                                <Card>
-                                    <h3 className="relative z-20 mb-4 text-xl">
-                                        🔑 TypeScript Ready
-                                    </h3>
-                                    <p className="relative z-20 text-neutral-400">
-                                        Full TypeScript support ensures type safety and better
-                                        developer experience.
-                                    </p>
-                                </Card>
-                                <Card>
-                                    <h3 className="relative z-20 mb-4 text-xl">
-                                        📚 No Dependencies
-                                    </h3>
-                                    <p className="relative z-20 text-neutral-400">
-                                        Stay lean. No unnecessary dependencies—just pure
-                                        functionality.
-                                    </p>
-                                </Card>
-                                <Card>
-                                    <h3 className="relative z-20 mb-4 text-xl">
-                                        ⚙️ Built for Developers
-                                    </h3>
-                                    <p className="relative z-20 text-neutral-400">
-                                        Designed to save you time. Integrate seamlessly with
-                                        JavaScript or TypeScript projects in seconds."
-                                    </p>
-                                </Card>
-                                <Card>
-                                    <h3 className="relative z-20 mb-4 text-xl">
-                                        🤟🏻 Modern and Open Source
-                                    </h3>
-                                    <p className="relative z-20 text-neutral-400">
-                                        Actively maintained and built for today’s development needs.
-                                        Open to contributions from the community.
-                                    </p>
-                                </Card>
+                            ))}
+                        </div>
+                        <div className="space-y-4">
+                            <h3 className="text-2xl">Installation</h3>
+                            <div className="prose prose-invert max-w-none">
+                                <pre className="w-full rounded-xl border border-zinc-800 p-6">
+                                    <code>npm install @is-it/fifteen</code>
+                                </pre>
                             </div>
-                            <div>
-                                <div className="space-y-4">
-                                    <h3 className="text-2xl">Installation</h3>
-                                    <div className="prose prose-invert">
-                                        <pre className="rounded-xl border border-zinc-800 p-6">
-                                            <code>npm install @is-it/fifteen</code>
-                                        </pre>
-                                    </div>
-                                    <h3 className="text-2xl">Usage</h3>
-                                    <div className="prose prose-invert">
-                                        <pre className="rounded-xl border border-zinc-800 p-6">
-                                            <code>
-                                                {`import { isItFifteen } from '@is-it/fifteen'
+                            <h3 className="text-2xl">Usage</h3>
+                            <div className="prose prose-invert max-w-none">
+                                <pre className="w-full rounded-xl border border-zinc-800 p-6">
+                                    <code>
+                                        {`import { isItFifteen } from '@is-it/fifteen'
 
 console.log(isItFifteen(15));  // true
-console.log(isItFifteen('15'));  // true
-console.log(isItFifteen(15, { strict: false }));  // true
+console.log(isItFifteen('15'));  // false
+console.log(isItFifteen('15', { strict: false }));  // true
 console.log(isItFifteen(-15, { allowNegative: true }));  // true
 console.log(isItFifteen('1111', { checkBinary: true }));  // true`}
-                                            </code>
-                                        </pre>
-                                    </div>
-                                </div>
+                                    </code>
+                                </pre>
                             </div>
                         </div>
                     </div>
-                </section>
-                <footer className="border-t border-zinc-800">
-                    <div className="container">
-                        <div className="py-8 text-center">
-                            <p className="text-zinc-400">
-                                &copy; 2025 - {new Date().getFullYear()} @is-it/fifteen. All rights
-                                reserved.
-                            </p>
-                        </div>
-                    </div>
-                </footer>
-            </div>
+                </div>
+            </section>
+            <Footer />
         </>
     )
 }
