@@ -1,92 +1,103 @@
-# is-it-fifteen
+# @is-it/fifteen
 
-**is-it-fifteen** is a lightweight utility to check if a given number is equal to **15**. This package is designed for quick number checks, especially when you need to validate if a number matches the value 15.
+**@is-it/fifteen** is a lightweight, flexible utility to check if a number equals **15**. With added options for loose comparison, binary numbers, negative values, and more, this package is designed to meet modern development needs while being simple to use.
 
 ## Features
 
-- Simple and easy-to-use function to check if a number is **15**.
-- Works seamlessly in both **JavaScript** and **TypeScript** environments.
-- No dependencies—just a pure, lightweight solution.
-- Provides a TypeScript declaration file for type safety.
+- **Lightweight and Fast**: Minimal size for optimal performance.
+- **Flexible Comparisons**: Supports strict or loose equality (`===` or `==`).
+- **Binary Number Support**: Allows checking binary strings like `'1111'` (binary for 15).
+- **Negative Number Checks**: Enables validation of `-15` when needed.
+- **JavaScript and TypeScript Ready**: Comes with full TypeScript support for type safety.
+- **No Dependencies**: Pure and lean package with zero dependencies.
+- **Developer Friendly**: Easy to integrate with any project, big or small.
 
 ## Installation
 
-You can install the package from NPM by running the following command:
+Install the package via npm or any other package managers:
 
 ```bash
-npm install is-it-fifteen
-```
-
-Or if you are using Yarn:
-
-```bash
-yarn add is-it-fifteen
+npm install @is-it/fifteen
 ```
 
 ## Usage
 
-### JavaScript
+You can use **@is-it/fifteen** in both JavaScript and TypeScript projects.
 
-Once installed, you can import and use the function in your JavaScript project like this:
-
-```javascript
-const isFifteen = require('is-it-fifteen')
-
-console.log(isFifteen(15)) // true
-console.log(isFifteen(10)) // false
-console.log(isFifteen(25)) // false
-```
-
-### TypeScript
-
-If you are using TypeScript, the package comes with built-in TypeScript type definitions, so you get full type support out of the box.
+### Basic Usage
 
 ```typescript
-import isFifteen from 'is-it-fifteen'
+import { isItFifteen } from '@is-it/fifteen'
 
-console.log(isFifteen(15)) // true
-console.log(isFifteen(10)) // false
-console.log(isFifteen(100)) // false
+console.log(isItFifteen(15)) // true
+console.log(isItFifteen('15', { strict: false })) // true
+console.log(isItFifteen(-15, { allowNegative: true })) // true
+console.log(isItFifteen('1111', { checkBinary: true })) // true
 ```
 
 ## API
 
-### `isFifteen(number: number): boolean`
+### `isItFifteen(value: number | string, options?: CheckOptions): boolean`
 
-- **number** (`number`): The number to check.
-- **Returns**: A boolean value (`true` if the number is 15, `false` otherwise).
+Checks if a number or string is equal to 15 based on provided options.
 
-#### Example:
+#### Parameters:
 
-```typescript
-console.log(isFifteen(15)) // true
-console.log(isFifteen(20)) // false
-console.log(isFifteen(-15)) // false
+1. **`value`** (`number | string`):  
+   The number or string to check.
+2. **`options`** (`CheckOptions`, optional):  
+   An object to configure comparison behavior:
+    - **`strict`** (`boolean`):  
+      If `true`, uses strict equality (`===`) for comparison. Default is `true`.
+    - **`allowNegative`** (`boolean`):  
+      If `true`, allows checking for `-15`. Default is `false`.
+    - **`checkBinary`** (`boolean`):  
+      If `true`, treats binary strings like `'1111'` as valid input. Default is `false`.
+
+#### Returns:
+
+- **`boolean`**:  
+  `true` if the value matches the criteria, otherwise `false`.
+
+## Examples
+
+### Strict Comparison (Default):
+
+```javascript
+console.log(isItFifteen(15)) // true
+console.log(isItFifteen('15')) // false
 ```
 
-## TypeScript Support
+### Loose Comparison:
 
-This package fully supports TypeScript, providing type definitions (`.d.ts`) for better development experience. You can use it directly in your TypeScript projects without needing to install additional type packages.
+```javascript
+console.log(isItFifteen('15', { strict: false })) // true
+console.log(isItFifteen(15, { strict: false })) // true
+```
 
-### Example TypeScript Declaration:
+### Negative Number Support:
 
-```typescript
-import isFifteen from 'is-it-fifteen'
+```javascript
+console.log(isItFifteen(-15, { allowNegative: true })) // true
+console.log(isItFifteen(-15)) // false (default behavior)
+```
 
-const result: boolean = isFifteen(15) // type-safe usage
+### Binary Number Support:
+
+```javascript
+console.log(isItFifteen('1111', { checkBinary: true })) // true (binary for 15)
+console.log(isItFifteen('1111')) // false (default behavior)
 ```
 
 ## Contributing
 
-Contributions are welcome! Feel free to open issues, create pull requests, or suggest improvements. To contribute, please fork the repository and submit your changes.
-
-### Steps to contribute:
+We welcome contributions! Here's how you can help:
 
 1. Fork the repository.
-2. Clone the forked repository to your local machine.
+2. Clone your forked repository to your local machine.
 3. Create a new branch for your feature or bug fix.
-4. Write tests if applicable.
-5. Submit a pull request with a detailed description of your changes.
+4. Write tests for your changes if applicable.
+5. Open a pull request with a clear description of your changes.
 
 ## License
 
