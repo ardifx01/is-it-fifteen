@@ -30,7 +30,9 @@ function App() {
                 </main>
                 <section className="py-20">
                     <div className="container">
-                        <h2 className="mb-14 text-6xl">Get Started</h2>
+                        <h2 className="mb-14 text-6xl" id="get-started">
+                            Get Started
+                        </h2>
                         <div className="grid grid-cols-2 gap-10">
                             <div className="grid grid-cols-2 gap-4">
                                 <Card>

@@ -13,7 +13,7 @@ export const CTAButton = React.forwardRef<HTMLAnchorElement, CTAButtonProps>(
                 ref={ref}
                 href="#get-started"
                 className={cn(
-                    'group relative w-50 cursor-pointer overflow-hidden rounded-full border border-zinc-700 bg-zinc-950 p-6 text-center text-lg font-semibold',
+                    'group relative inline-block w-50 cursor-pointer overflow-hidden rounded-full border border-zinc-700 bg-zinc-950 p-6 text-center text-lg font-semibold',
                     className
                 )}
                 {...props}
