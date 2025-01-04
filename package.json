@@ -1,6 +1,6 @@
 {
     "name": "@is-it/fifteen",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "type": "module",
     "description": "A simple package to check if a number is 15",
     "main": "dist/index.js",
@@ -28,7 +28,7 @@
     "bugs": {
         "url": "https://github.com/kimmyxpow/is-it-fifteen/issues"
     },
-    "homepage": "https://github.com/kimmyxpow/is-it-fifteen#readme",
+    "homepage": "https://15.pow.kim",
     "devDependencies": {
         "@eslint/js": "^9.17.0",
         "@iconify/react": "^5.2.0",
