@@ -2,6 +2,7 @@ import { DotPattern } from './components/dot-pattern'
 import { CTAButton } from './components/cta-button'
 import { ScrollProgress } from './components/scroll-progress'
 import { Card } from './components/card'
+import { Icon } from '@iconify/react'
 
 function App() {
     return (
@@ -23,7 +24,17 @@ function App() {
                                 number checks. Optimized for modern JavaScript and TypeScript
                                 environments.
                             </p>
-                            <CTAButton />
+                            <div className="flex items-center justify-center gap-6">
+                                <CTAButton />
+                                <a
+                                    href="http://github.com/kimmyxpow/is-it-fifteen"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-3xl text-white transition-all duration-300 hover:text-zinc-400"
+                                >
+                                    <Icon icon="tabler:brand-github" />
+                                </a>
+                            </div>
                         </div>
                     </div>
                     <DotPattern />
