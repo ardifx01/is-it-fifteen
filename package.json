@@ -1,6 +1,6 @@
 {
     "name": "@is-it/fifteen",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "type": "module",
     "description": "A simple package to check if a number is 15",
     "main": "dist/index.js",
