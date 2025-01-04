@@ -2,15 +2,16 @@ import React from 'react'
 import { ArrowDown } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
-interface CTAButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface CTAButtonProps extends React.ButtonHTMLAttributes<HTMLAnchorElement> {
     text?: string
 }
 
-export const CTAButton = React.forwardRef<HTMLButtonElement, CTAButtonProps>(
+export const CTAButton = React.forwardRef<HTMLAnchorElement, CTAButtonProps>(
     ({ className, ...props }, ref) => {
         return (
-            <button
+            <a
                 ref={ref}
+                href="#get-started"
                 className={cn(
                     'group relative w-50 cursor-pointer overflow-hidden rounded-full border border-zinc-700 bg-zinc-950 p-6 text-center text-lg font-semibold',
                     className
@@ -25,7 +26,7 @@ export const CTAButton = React.forwardRef<HTMLButtonElement, CTAButtonProps>(
                     <ArrowDown />
                 </div>
                 <div className="absolute top-[45%] left-[20%] h-2 w-2 scale-[1] rounded-lg bg-white transition-all duration-300 group-hover:top-[0%] group-hover:left-[0%] group-hover:h-full group-hover:w-full group-hover:scale-[1.8] group-hover:bg-white"></div>
-            </button>
+            </a>
         )
     }
 )
